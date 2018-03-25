@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang='zh-cn'>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1'>
+  <meta http-equiv='Cache-Control' content='no-siteapp'>
+  <meta name='renderer' content='webkit'>
+  <meta name='robots' content='index, follow'>
+  <meta name='applicable-device' content='pc,mobile'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+  <title>Instant even eternal</title>
+  <link rel='shortcut icon' type='image/x-icon' href='../static/src/img/ico1.ico'>
+  <link rel='stylesheet' type='text/css' href='../static/node_modules/bootstrap/dist/css/bootstrap.min.css'>
+	<style type="text/css">
+
+    img{
+    max-width:100%;
+    }
+    </style>
+</head>
+<body>
+
+
+
+<!-- 导航条 -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" src=""Hi</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a class="navbar-brand" href="#">
+        <img alt="Brand" src="../static/src/img/ico1.ico">
+      </a></li>
+        <li><a type="button"  data-toggle="modal" data-target="#myModal">
+  {% if Message %} {{ Message }}{% else %}login{% endif %}</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="text-primary"><a href="javascript:void(alert('warning!!!'))">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+	</nav>
+
+
+
+
+<div id="main" style="background-color=balck;" >
+
+	<div id="waterfall_ul"></div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="text-center">
+        <h1 class="modal-title" id="myModalLabel">Nice To Meet You</h1>
+
+        </div>
+      </div>
+      <div class="modal-body" style="background-color: #def5d6;">
+       <form method="POST"  >
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <!-- <input type="text" class="form-control" id="username" placeholder="Email"> -->
+  </div>
+
+  	<div style="border-radius:20px;">{{form.username(id="username")}}</div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <!-- <input type="password" class="form-control" id="password" placeholder="Password"> -->
+
+  <div style="border-radius:20px;">
+  	{{form.password}}
+  </div>
+  </div>
+  <div>
+  <div class="form-group" style="max-width:50%;">
+    <label for="exampleInputFile" style="border-radius:20px;">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <div style="max-width:50%;">show the photos on the rigth</div>
+  </div>
+  <button type="submit" name="LoginSub" class="btn btn-default">Submit</button>
+  </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <li><a type="button"  data-toggle="modal" data-target="#Resign">
+  {% if Message %} {{ Message }}{% else %}Resign{% endif %}</a></li>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+ <!--  注册 -->
+ <div class="modal fade" id="Resign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="text-center">
+        <h1 class="modal-title" id="myModalLabel">Nice To Meet You</h1>
+
+        </div>
+      </div>
+      <div class="modal-body" style="background-color: #def5d6;">
+       <form method="POST" >
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <!-- <input type="text" class="form-control" id="username" placeholder="Email"> -->
+  </div>
+  
+  	<div style="border-radius:20px;">{{form.username(id="newname")}}</div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <!-- <input type="password" class="form-control" id="password" placeholder="Password"> -->
+ 
+  <div style="border-radius:20px;">
+  	{{form.newpossword}}
+  </div>
+  </div>
+  <div>
+  <div class="form-group" style="max-width:50%;">
+    <label for="exampleInputFile" style="border-radius:20px;">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox">{{ newname }},{{newpassword}}
+    </label>
+  </div>
+  <div style="max-width:50%;">show the photos on the rigth</div>
+  </div>
+  <button type="submit" name="LoginSub" class="btn btn-default">Submit</button>
+  </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <li><a type="button"  data-toggle="modal" data-target="#Resign">
+  {% if Message %} {{ Message }}{% else %}Resign{% endif %}</a></li>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+</body>
+<script type='text/javascript' src='../static/node_modules/jquery/dist/jquery.min.js'></script>
+<script type="text/javascript">
+var fall=document.getElementById("waterfall_ul");
+
+     var a =0;
+    createDiv (a)
+
+
+    function createDiv (a) {
+        <!--roll_pic=document.createElement('div');-->
+
+        <!--roll_pic.style.height="2000px";-->
+        <!--roll_pic=innerHTML="<p>hi11111111111111111111111111111111111111111111111111111111111</p>";-->
+        <!--&lt;!&ndash;document.getElementById("main").appendChild(roll_pic);&ndash;&gt;-->
+        <!--console.log(document.getElementById("main"));-->
+        <!--document.getElementById("main").append(roll_pic);-->
+
+        $(document).ready(function () {
+
+        var student = new Object();
+        student.page=a;
+
+        student.location = "CHINA";
+		student.sex="1";
+		student.birth="1995-01-14"
+
+        var data = JSON.stringify(student)
+
+    $.ajax({
+        url: "/load_data",
+        type: "POST",
+        data: data,
+        success: function (msg) {
+        console.log(msg);
+        for (var i = 1; i < 19; i++) {
+
+            <!--console.log(msg[i][2]);-->
+
+
+            img = document.createElement('img');
+            article=document.createElement('article')
+            h1=document.createElement('h1')
+            p=document.createElement('h3')
+            img.style.width="100%";
+            img.setAttribute("src", msg[i][2]);
+            var div = document.createElement('div');
+
+            var rnd = Math.floor(Math.random()*310+50)   //div的高度在50到350之间
+            div.style.height = img.style.height + "px";
+            div.style.width =  "20%";
+            div.style.position="absolute";
+            div.style.padding="30px";
+            div.style.transition="0.5s"
+
+
+
+            div.setAttribute('class',"column size-1of3");
+            document.body.appendChild(div);
+
+            div.appendChild(img);
+            div.appendChild(article);
+            article.appendChild(h1);
+            article.appendChild(p);
+            h1.innerHTML=msg[i][3]+msg[i][1];
+            p.innerHTML=msg[i][4];
+
+        }
+
+        setTimeout(function() {
+        change()
+        })
+
+
+        }
+    })
+    })
+
+
+
+    }
+
+    function change() {
+        var aDiv = document.getElementsByTagName('div');
+        // alert(aDiv.length);
+        var windowCW = document.documentElement.clientWidth;  //窗口视口的宽度
+        var n =(Math.floor(windowCW/220))-1;                     //一行能容纳多少个div，并向下取整
+        if (n<=0) {return};
+        // alert(n);
+        var t = 0;
+        var center = (windowCW - n*220)/2;                   //居中
+        var arrH = [];                                       //定义一个数组存放div的高度
+        for (var i = 0; i < aDiv.length; i++) {
+            var j = i%n;
+
+            if (arrH.length==n) {                    //一行排满n个后到下一行
+                var min = findMin(arrH);              //从最“矮”的排起，可以从下图的序号中看得出来，下一行中序号是从矮到高排列的
+                aDiv[i].style.left =center + min*210 + "px";
+                aDiv[i].style.top = arrH[min]+10 + "px";
+                arrH[min] += aDiv[i].offsetHeight + 10;
+                // alert(min);
+            }else{
+                arrH[j] = aDiv[i].offsetHeight;
+                aDiv[i].style.left =center + 200*j+10*j + "px";
+                aDiv[i].style.top = 0;
+            }
+
+        };
+    }
+    window.onresize = function(){      //窗口改变也调用函数
+        change();
+    }
+
+    window.onscroll= function  () {
+        // 页面总高度
+        var bodyHeight = document.documentElement.offsetHeight;
+        // 可视区高度
+        var windowHeight = document.documentElement.clientHeight;
+        //滚动条的高度
+        var srcollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var srcollH = document.body.scrollHeight;
+        // alert(srcollH);
+        if (srcollTop+windowHeight  >= srcollH-50) {
+
+            createDiv(a+1);
+            a+=1;
+        };
+    }
+
+    function findMin(arr) {
+    var m = 0;
+    for (var i = 0; i < arr.length; i++) {
+        m = Math.min(arr[m], arr[i]) == arr[m] ? m : i;
+    }
+    return m;
+}
+var fall=document.getElementById("waterfall_ul");
+
+</script>
+<script type="text/javascript"> </script>
+
+<script type='text/javascript' src='../static/node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
+<script type="text/javascript" src='../static/src/js/js.js'></script>
+</html>

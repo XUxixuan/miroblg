@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Home</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="../static/new/css/base.css">
+    <link rel="stylesheet" href="../static/new/css/vendor.css">
+    <link rel="stylesheet" href="../static/new/css/main.css">
+
+
+    <!-- script
+    ================================================== -->
+
+    <script src="../static/new/js/modernizr.js"></script>
+    <script src="../static/new/js/pace.min.js"></script>
+    <script src="../static/new/js/jquery-2.1.3.min.js"></script>
+
+
+    <link rel="shortcut icon" href="../static/src/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../static/src/img/favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<header class="short-header">
+
+    <div class="gradient-block"></div>
+
+    <div class="row header-content">
+
+        <div class="logo">
+            <a href="index.html">Author</a>
+        </div>
+
+        <nav id="main-nav-wrap">
+            <ul class="main-navigation sf-menu">
+
+                <li class="current"><a href="/logout" title="">LOG OUT</a></li>
+
+            </ul>
+        </nav> <!-- end main-nav-wrap -->
+
+
+
+        <div class="triggers">
+
+            <a class="search-trigger" href="/logout"><i class="fa fa-search"></i></a>
+
+        </div> <!-- end triggers -->
+
+    </div>
+
+</header> <!-- end header -->
+
+
+<!-- masonry
+================================================== -->
+
+
+
+
+
+
+<section id="bricks">
+
+    <div  class="row masonry">
+        <div class="row">
+            <div id="app" class="col-five tab-full">
+
+                <div v-if="add">
+
+                    <!--<div v-html="message"></div>-->
+                    <!--<div v-for="todo in todos" v-html="todo.text"></div>-->
+
+
+
+
+                    <div v-if="flag" class="brick entry animate-this"  >
+
+                        <article v-for="(item, index) in todos" :key="index" class="brick entry format-standard animate-this">
+
+                            <div class="entry-thumb">
+                                <a href="single-standard.html" class="thumb-link">
+                                    <img class="newclass" :src="item.imgurl"  alt="ferris wheel">
+                                </a>
+                            </div>
+
+                            <div class="entry-text">
+                                <div class="entry-header">
+
+                                    <div class="entry-meta">
+               			<span class="cat-links">
+               				<h1>name:<a v-text="item.name" ></a></h1>
+
+               			</span>
+                                    </div>
+                                    <div class="entry-meta">
+               			<span class="cat-links">
+                            <i class="fa fa-heart"  style="color:#ff99cc; "  ><a v-text="item.likenumber"></a></i>
+                        </span>
+                                        <span class="cat-links">
+                            <i style="color:#ff99cc; "  >Area:<a v-text="item.area"></a></i>
+                        </span>
+                                    </div>
+                                    <div class="entry-meta">
+               			<span class="cat-links">
+                             <i style="color:#ff99cc; "  > Birthday:<a v-text="item.birthday"></a></i>
+                        </span>
+                                    </div>
+
+
+                                    <h1 class="entry-title"><a >This Is Another Standard Format Post.</a></h1>
+
+                                </div>
+                                <div class="entry-meta"  >
+                                    <h1 class="entry-title"v-text="item.artical"><a >This Is Another Standard Format Post.</a></h1>
+                                </div>
+                            </div>
+
+                        </article>
+
+                        <button @click="flag = !flag">编辑</button>
+                    </div>
+
+                    <div v-else >
+
+                        <article v-for="(item, index) in todos" :key="index" class="brick entry format-standard animate-this">
+
+                            <div class="entry-thumb">
+                                <a href="single-standard.html" class="thumb-link">
+                                    <img class="newclass" :src="item.imgurl"  alt="ferris wheel">
+                                </a>
+                            </div>
+
+                            <div class="entry-text">
+                                <div class="entry-header">
+
+                                    <div class="entry-meta">
+               			<span class="cat-links">
+               				<h1>name:<input  class="full-width" v-model="item.name" ></input></h1>
+
+               			</span>
+                                    </div>
+                                    <div class="entry-meta">
+               			<span class="cat-links">
+                            <i class="fa fa-heart"  style="color:#ff99cc; "  ><a v-text="item.likenumber"></a></i>
+                        </span>
+                                        <span class="cat-links">
+                            <i style="color:#ff99cc; "  >Area:<input class="full-width" v-model="item.area"></input></i>
+                        </span>
+                                    </div>
+                                    <div class="entry-meta">
+               			<span class="cat-links">
+                             <i style="color:#ff99cc; "  > Birthday:<input class="full-width" type="date" v-model="item.birthday"></input></i>
+                        </span>
+                                    </div>
+
+
+                                    <h1 class="entry-title"><a >artical.</a></h1>
+
+                                </div>
+                                <div class="entry-meta"  >
+                                    <textarea class="full-width"  class="entry-title"v-model="item.artical"> </textarea>
+                                </div>
+                            </div>
+
+                        </article>
+
+
+                        <button @click="flag = !flag">取消</button>
+                        <button @click="post2" >保存</button>
+                    </div>
+
+                </div>
+                <div v-else >
+
+
+                    <!--<div class="col-six tab-full">-->
+
+
+                        <!--<button  id="add">SHARING TO US</button>-->
+
+                        <!--<form id="form2" action="/action" method="POST" enctype="multipart/form-data" >-->
+                            <!--<div>-->
+                                <!--<label for="sampleInput">Your name</label>-->
+                                <!--<input class="full-width" type="text" placeholder="John" id="sampleInput" value="wade">-->
+                            <!--</div>-->
+                            <!--<div>-->
+                                <!--<label for="sampleInput">Your email</label>-->
+                                <!--<input class="full-width" type="email" placeholder="test@mailbox.com"  value="123@qq.com" >-->
+                            <!--</div>-->
+                            <!--<div>-->
+                                <!--<label for="sampleInput">Your birthday & Sex</label>-->
+                                <!--<input type="date" class="search-field full-width" placeholder="Type Your Birthday"  name="birthday" title="Search for:" autocomplete="off"  value="2018-02-08">-->
+                                <!--<input type="radio" name="opType" value="0" />male-->
+                                <!--<input type="radio" name="opType" value="1" />female-->
+                            <!--</div>-->
+                            <!--<div>-->
+                                <!--<label for="sampleInput">Share us your photos</label>-->
+                                <!--<input class="button-primary full-width-on-mobile"  type="file"   id="file2" name="photo">-->
+                            <!--</div>-->
+
+                            <!--<div>-->
+                                <!--<label for="sampleRecipientInput">Reason for contacting</label>-->
+                                <!--<div class="ss-custom-select">-->
+                                    <!--<select class="full-width" id="select2" >-->
+                                        <!--<option value ="China">中国</option>-->
+                                        <!--<option value ="USA">USA</option>-->
+                                        <!--<option value="UK">UK</option>-->
+                                        <!--<option value="Korea">Korea</option>-->
+                                        <!--<option value="Thai">泰国</option>-->
+                                    <!--</select>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <!--<label for="exampleMessage">Message</label>-->
+                            <!--<textarea class="full-width" placeholder="Your message" id="exampleMessage">1111111111</textarea>-->
+                            <!--&lt;!&ndash;<textarea  rows="4"class="textarea" >aa1111111</textarea>&ndash;&gt;-->
+                            <!--<label class="add-bottom">-->
+                                <!--<input type="checkbox">-->
+                                <!--<span class="label-text">Send a copy to yourself</span>-->
+                            <!--</label>-->
+
+                            <!--<input type="submit" id="form_up2" value="上传">-->
+
+                        <!--</form>-->
+
+                    <!--</div>-->
+
+                </div>
+                </div>
+            <!--<a href="/">baby  你没有po东西啊 点我点我 点我 使劲点我</a>-->
+            <button   id="add">SHARING TO US</button>
+            <div class="row"id="updata">
+
+                <div class="col-six tab-full">
+
+
+
+
+                    <form v-for="(todo, index) in todos" :key="index" >
+                        <div>
+                            <label for="sampleInput" > Name:</label>
+                            <h1 class="full-width" type="text" placeholder="John" id="sampleInput" v-text="todo.name"/>
+                        </div>
+                        <div>
+                            <label for="sampleInput">Your email</label>
+                            <h6 class="full-width" type="email" placeholder="test@mailbox.com"  v-text="todo.email" />
+                        </div>
+                        <div>
+                            <label for="sampleInput">Your birthday & Sex</label>
+                            <p4 type="date" class="search-field full-width" placeholder="Type Your Birthday" title="Search for:" autocomplete="off"  v-text="todo.birthday"/>
+                            <p3 v-if="todo.sex=='1'"  name="opType"  />male
+                            <p3 v-else name="opType" value="1" />female
+                        </div>
+
+
+                        <div>
+                            <label for="sampleRecipientInput">The place where you from:</label>
+                            <h1 class="ss-custom-select" v-text="todo.area">
+                                <!--<select class="full-width"  >-->
+                                    <!--<option value ="China">中国</option>-->
+                                    <!--<option value ="USA">USA</option>-->
+                                    <!--<option value="UK">UK</option>-->
+                                    <!--<option value="Korea">Korea</option>-->
+                                    <!--<option value="Thai">泰国</option>-->
+                                <!--</select>-->
+                        </h1>
+                        </div>
+
+                        <label for="exampleMessage">Message</label>
+                        <textarea class="full-width" placeholder="Your message" v-model="todo.artical" v-text="todo.artical"></textarea>
+                        <!--<textarea  rows="4"class="textarea" >aa1111111</textarea>-->
+                        <label class="add-bottom">
+                            <input type="checkbox">
+                            <span class="label-text">Send a copy to yourself</span>
+                        </label>
+
+                        <input type="button" @click="SendAll" value="最后一波操作啦啦啦！！！！！！！">
+
+                    </form>
+
+                </div>
+                    <div class=" col-six tab-full"   >
+            <p v-text="msg"></p>
+            <input type="file" id="file" @change="SendImg(event)"/>
+                <div class=" col-six tab-full">
+                <img class="img" :src="imgurl">
+                </div>
+            </div>
+            </div>
+            <!-- end article -->
+
+
+            <div id="content"  >
+                <div v-if="add" class="col-seven tab-full">
+                    <ol class="commentlist" v-for="(todo, index) in todos" :key="index">
+
+                        <li class="depth-1">
+
+                            <div class="avatar">
+                                <img width="50" height="50" class="avatar" src="../static/new/images/avatars/user-04.jpg" alt="">
+                            </div>
+
+                            <div v-if="todo.flag" class="comment-content">
+
+                                <div class="comment-info">
+                                    <cite v-text="todo.name"></cite>
+
+                                    <div class="comment-meta">
+                                        <time class="comment-time" v-text="todo.datetime"></time>
+                                        <span class="sep">/</span><span  @click="todo.flag = !todo.flag" >Reply</span>
+                                    </div>
+                                </div>
+
+                                <div class="comment-text">
+                                    <h1 v-text="todo.artical"></h1>
+                                    <span v-text="todo.reply"></span>
+
+
+                                </div>
+                            </div>
+                            <div v-else class="comment-content">
+
+                                <div class="comment-info">
+                                    <cite v-text="todo.name"></cite>
+
+                                    <div class="comment-meta">
+                                        <time class="comment-time" v-text="todo.datetime"></time>
+                                        <span class="sep">/</span><span  @click="todo.flag = !todo.flag" >Cancel</span>
+                                    </div>
+                                </div>
+                                <div class="comment-text"  >
+                                    <h6 v-text="todo.name"></h6>
+                                    <input v-model="todo.reply">
+                                    <button @click="post2(todo.reply,todo.id),todo.flag = !todo.flag"  > Send </button>
+                                </div>
+                            </div>
+
+
+
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+
+        </div></div></section>
+
+
+
+
+
+
+
+
+<script src="../static/new/js/jquery-2.1.3.min.js"></script>
+<script src="../static/new/js/axios.js"></script>
+
+<!--<script src="https://cdn.bootcss.com/axios/0.16.0/axios.min.js"></script>-->
+<script src="../static/new/js/plugins.js"></script>
+<script src="../static/new/js/vue.min.js"></script>
+<script src="../static/new/js/PM.js"></script>
+<!--<script src="../static/new/js/jquery.appear.js"></script>-->
+
+
+
+
+</body>
+
+</html>

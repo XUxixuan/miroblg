@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+	<!--- basic page needs
+    ================================================== -->
+	<meta charset="utf-8">
+	<title>Standard Format Post - Abstract</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- mobile specific metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="../static/new/css/base.css">
+	<link rel="stylesheet" href="../static/new/css/vendor.css">
+	<link rel="stylesheet" href="../static/new/css/main.css">
+
+
+	<!-- script
+    ================================================== -->
+	<script src="../static/new/js/modernizr.js"></script>
+	<script src="../static/new/js/pace.min.js"></script>
+
+	<!-- favicons
+     ================================================== -->
+	<!--<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">-->
+	<!--<link rel="icon" href="favicon.ico" type="image/x-icon">-->
+
+</head>
+
+<body id="top">
+
+<!-- header
+================================================== -->
+<header class="short-header">
+
+	<div class="gradient-block"></div>
+
+	<div class="row header-content">
+
+		<div class="logo">
+			<a href="index.html">Author</a>
+		</div>
+
+	</div>
+
+
+</header> <!-- end header -->
+{% if Hello%}
+<section id="content-wrap" class="blog-single">
+
+
+	<!-- respond -->
+	<div class="respond">
+
+		<h3>Wellcome {{Hello[0]}}:</h3>
+
+		<form action="/login" method="POST"  method="post" >
+			<fieldset>
+
+				<div class="form-field">
+					<input name="account" type="text"  class="full-width" placeholder="Your Account" value="{{Hello[1]}}">
+				</div>
+
+				<div class="form-field">
+					<input name="password" type="password"  class="full-width" placeholder="Your Password" value="{{Hello[2]}}">
+				</div>
+
+
+				<div class="form-field">
+					<input type="submit" class="submit button-primary" value="submit" >
+
+				</div>
+			</fieldset>
+		</form> <!-- Form End -->
+
+	</div> <!-- Respond End -->
+
+
+
+</section>
+
+{% else %}
+<section id="content-wrap" class="blog-single">
+
+
+				<!-- respond -->
+				<div class="respond">
+
+					<h3>Leave a Comment</h3>
+
+					<form action="/login" method="POST"  method="post" >
+						<fieldset>
+
+							<div class="form-field">
+								<input name="account" type="text" id="cName" class="full-width" placeholder="Your Account" value="admin">
+							</div>
+
+							<div class="form-field">
+								<input name="password" type="password" id="cEmail" class="full-width" placeholder="Your Email" value="123456">
+							</div>
+
+
+							<div class="form-field">
+							<input type="submit" class="submit button-primary" value="submit" >
+							<a type="button" name="register" href="/regisn"  value="注册"  >注册</a>
+							</div>
+						</fieldset>
+					</form> <!-- Form End -->
+
+				</div> <!-- Respond End -->
+
+
+
+</section> <!-- end content -->
+{% endif %}
+
+
+<script src="../static/new/js/jquery-2.1.3.min.js"></script>
+<script src="../static/new/js/plugins.js"></script>
+<script src="../static/new/js/vue.min.js"></script>
+<script src="../static/new/js/single-standard.js"></script>
+<script src="../static/new/js/addlike.js"></script>
+
+</body>
+
+</html>
+

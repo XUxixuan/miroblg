@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Home</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="../static/new/css/base.css">
+    <link rel="stylesheet" href="../static/new/css/vendor.css">
+    <link rel="stylesheet" href="../static/new/css/main.css">
+
+
+    <!-- script
+    ================================================== -->
+    <script src="../static/new/js/modernizr.js"></script>
+    <script src="../static/new/js/pace.min.js"></script>
+    <script src="../static/new/js/jquery-2.1.3.min.js"></script>
+
+
+    <link rel="shortcut icon" href="../static/src/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../static/src/img/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top">
+
+<!-- header
+================================================== -->
+<header class="short-header">
+
+    <div class="gradient-block"></div>
+
+    <div class="row header-content">
+
+        <div class="logo">
+            <a href="index.html">Author</a>
+        </div>
+
+        <nav id="main-nav-wrap">
+            <ul class="main-navigation sf-menu">
+
+                <li class="current"><a href="/logout" title="">LOG OUT</a></li>
+                <li class="has-children">
+                    <a href="category.html" title="">Categories</a>
+                    <ul class="sub-menu">
+
+                        <li><a href="category.html">Wordpress</a></li>
+                        <li><a href="category.html">HTML</a></li>
+                        <li><a href="category.html">Photography</a></li>
+                        <li><a href="category.html">UI</a></li>
+                        <li><a href="category.html">Mockups</a></li>
+                        <li><a href="category.html">Branding</a></li>
+                    </ul>
+                </li>
+                <li class="has-children">
+                    <a href="single-standard.html" title="">Blog</a>
+                    <ul class="sub-menu">
+                        <li><a href="single-video.html">Video Post</a></li>
+                        <li><a href="single-audio.html">Audio Post</a></li>
+                        <li><a href="single-gallery.html">Gallery Post</a></li>
+                        <li><a href="single-standard.html">Standard Post</a></li>
+                    </ul>
+                </li>
+                <li><a href="style-guide.html" title="">Styles</a></li>
+                <li><a href="/login" title="">Login</a></li>
+                <li><a href="contact.html" title="">Contact</a></li>
+            </ul>
+        </nav> <!-- end main-nav-wrap -->
+
+        <div class="search-wrap">
+            <div class="row">
+                <nav class="pagination" >
+                    <select id="select3" >
+                        <option value ="China">中国</option>
+                        <option value ="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Korea">Korea</option>
+                        <option value="Thai">泰国</option>
+                    </select>
+                    <input id="selectdate1" type="date" class="search-field" placeholder="Type Your Birthday"  name="birthday" title="Search for:" autocomplete="off" >
+                    <input class="radio1" type="radio" name="SSEX" value="0" />male
+                    <input class="radio1" type="radio" name="SSEX" value="1" />female
+                    <button id="selectbtn1" >查询</button>
+                </nav>
+            </div>
+
+
+
+
+
+            <a href="#" id="close-search" class="close-btn">Close</a>
+
+        </div> <!-- end search wrap -->
+
+        <div class="triggers">
+            <a class="search-trigger" href="#"><i class="fa fa-search"></i></a>
+            <a class="menu-toggle" href="#"><span>Menu</span></a>
+        </div> <!-- end triggers -->
+
+    </div>
+
+</header> <!-- end header -->
+
+
+<!-- masonry
+================================================== -->
+
+<div id="app">
+    <div v-html="message"></div>
+    <div v-for="todo in todos" v-html="message"></div>
+</div>
+
+
+        <pre class="prettyprint prettyprinted"><code><span class="pln">
+code </span><span class="pun">{</span><span class="pln">
+   font</span><span class="pun">-</span><span class="pln">size</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1.4rem</span><span class="pun">;</span><span class="pln">
+   margin</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">.</span><span class="lit">2rem</span><span class="pun">;</span><span class="pln">
+   padding</span><span class="pun">:</span><span class="pln"> </span><span class="pun">.</span><span class="lit">2rem</span><span class="pln"> </span><span class="pun">.</span><span class="lit">6rem</span><span class="pun">;</span><span class="pln">
+   white</span><span class="pun">-</span><span class="pln">space</span><span class="pun">:</span><span class="pln"> nowrap</span><span class="pun">;</span><span class="pln">
+   background</span><span class="pun">:</span><span class="pln"> </span><span class="com">#F1F1F1;</span><span class="pln">
+   border</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1px</span><span class="pln"> solid </span><span class="com">#E1E1E1;	</span><span class="pln">
+   border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span><span class="pln"> </span><span class="lit">3px</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+
+{% for user in test %}
+<div class="alert-box ss-notice hideit" >
+    <article class="brick entry animate-this" >
+
+    <div class="entry-thumb">
+        <a  class="thumb-link" href="/contact/{{user[0]}} " >
+            <img  class="newclass"  src="{{user[5]}}"  alt="{{user[0]}}">
+        </a>
+    </div>
+
+    <div class="entry-text" id="try">
+        <div class="entry-header">
+
+            <div class="entry-meta">
+               			<span class="cat-links">
+               				<h1 class="entry-title"><a class="Name">{{user[1]}}</a></h1>
+               			</span>
+            </div>
+            <span class="Birthday" >{{user[6]}}</span>
+
+            <span class="Area" >{{user[2]}}</span>
+            <span>
+							 <i class="fa fa-heart-o" onclick="like_Num(this)"  style="color:#ff99cc; " id="{{user[0]}}" >{{user[8]}}</i>
+						 </span>
+
+        </div>
+        <div class="entry-excerpt">
+        </div>
+    </div>
+    <i class="fa fa-times close" onclick="delect(this)" id="{{user[0]}}" ></i>
+
+    </article> <!-- end article -->
+</div><!-- /error -->
+{% endfor %}
+        <!--<h3>Alert Boxes</h3>-->
+
+        <!--<div class="alert-box ss-error hideit" >-->
+            <!--<p>Error Message. Your Message Goes Here.</p>-->
+            <!--<i class="fa fa-times close"></i>-->
+        <!--</div>&lt;!&ndash; /error &ndash;&gt;-->
+
+        <!--<div class="alert-box ss-success hideit">-->
+            <!--<p>Success Message. Your Message Goes Here.</p>-->
+            <!--<i class="fa fa-times close"></i>-->
+        <!--</div>&lt;!&ndash; /success &ndash;&gt;-->
+
+        <!--<div class="alert-box ss-info hideit">-->
+            <!--<p>Info Message. Your Message Goes Here.</p>-->
+            <!--<i class="fa fa-times close"></i>-->
+        <!--</div>&lt;!&ndash; /info &ndash;&gt;-->
+
+        <!--</div>&lt;!&ndash; /error &ndash;&gt;-->
+        <!--<div class="alert-box ss-notice hideit">-->
+        <!--<p>Notice Message. Your Message Goes Here.</p>-->
+        <!--<i class="fa fa-times close"></i>-->
+    <!--</div>&lt;!&ndash; /notice &ndash;&gt;-->
+        <!--<div class="alert-box ss-notice hideit">-->
+            <!--<p>Notice Message. Your Message Goes Here.</p>-->
+            <!--<i class="fa fa-times close"></i>-->
+        <!--</div>&lt;!&ndash; /notice &ndash;&gt;-->
+        <!--<div class="alert-box ss-notice hideit">-->
+            <!--<p>Notice Message. Your Message Goes Here.</p>-->
+            <!--<i class="fa fa-times close"></i>-->
+        <!--</div>&lt;!&ndash; /notice &ndash;&gt;-->
+        <!--<div class="alert-box ss-notice hideit">-->
+            <!--<p>Notice Message. Your Message Goes Here.</p>-->
+            <!--<i class="fa fa-times close"></i>-->
+        <!--</div>&lt;!&ndash; /notice &ndash;&gt;-->
+        <!--<div class="alert-box ss-notice hideit">-->
+            <!--<p>Notice Message. Your Message Goes Here.</p>-->
+            <!--<i class="fa fa-times close"></i>-->
+        <!--</div>&lt;!&ndash; /notice &ndash;&gt;-->
+
+
+    </div>
+
+</div>
+
+
+<!--{% if file_url %}-->
+<!--<img src="{{ file_url }}" alt="">-->
+<!--{% else %}-->
+<!--<p>还没有上传文件</p>-->
+<!--{% endif %}-->
+
+<!-- Java Script
+
+================================================== -->
+<script src="../static/new/js/jquery-2.1.3.min.js"></script>
+<script src="../static/new/js/plugins.js"></script>
+<script src="../static/new/js/vue.min.js"></script>
+<!--<script src="../static/new/js/jquery.appear.js"></script>-->
+<script src="../static/new/js/admin.js"></script>
+<script src="../static/new/js/addlike.js"></script>
+
+
+</body>
+
+</html>
